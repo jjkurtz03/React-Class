@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, FormGroup, Input, Label, Col, Row } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 
@@ -38,8 +38,7 @@ class CommentForm extends Component {
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                         <ModalBody>
                             <LocalForm onSubmit={values => this.handleForm(values)}>
-                                <Row className="form-group">
-                                    <Col md={12}>
+                                <div className="form-group">
                                     <Label htmlFor="rating">Rating</Label>
                                     <Control.select model=".rating" id="rating" name="rating" className="form-control">
                                             <option>1</option>
@@ -48,10 +47,8 @@ class CommentForm extends Component {
                                             <option>4</option>
                                             <option>5</option>
                                         </Control.select>
-                                    </Col>
-                                </Row>
-                                <Row className="form-group">
-                                    <Col md={12}>
+                                </div>
+                                <div className="form-group">
                                         <Label htmlFor="author">Your Name</Label>
                                         <Control.text 
                                             model=".author" 
@@ -73,24 +70,19 @@ class CommentForm extends Component {
                                                 maxLength: 'Must be 15 characters or less'
                                             }}
                                         />
-                                    </Col>
-                                </Row>
-                                <Row className="form-group">
-                                    <Col md={12}>
+                                </div> 
+                                <div className="form-group">
                                         <Label htmlFor="text">Comment</Label>
                                         <Control.textarea model=".text" id="text" name="text"
                                         rows="6"
                                         className="form-control"
                                         />
-                                    </Col>
-                                </Row>
-                                <Row className="form-group">
-                                <Col md={{size: 10}}>
+                                </div> 
+                                <div className="form-group">
                                     <Button type="submit" color="primary">
                                         Submit
                                     </Button>
-                                </Col>
-                            </Row>
+                                </div>
                             </LocalForm>
                         </ModalBody>
                     </Modal>
